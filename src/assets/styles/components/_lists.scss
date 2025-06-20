@@ -1,0 +1,16 @@
+li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 34%;
+        width: 10px;
+        height: 10px;
+        background-color: $color-primary;
+        border-radius: 50%; 
+    }
+}
