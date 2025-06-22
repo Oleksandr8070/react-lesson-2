@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PromptLogin from "./PromptLogin";
+import { use } from "react";
 
 
 function Task1({usersData}) {
@@ -10,6 +11,8 @@ function Task1({usersData}) {
     const [buttonState, setButtonState] = useState(false)
 
     function changeData(e) {
+        buttonState ? setButtonState(false)  :  
+
         setUser(prevData => ({
             ...prevData,
             [e.target.name]: e.target.value
@@ -17,7 +20,17 @@ function Task1({usersData}) {
     }
 
     function clickButton() {
-        setButtonState((v) => !v)
+        if (user.login !== '' && user.password !== '') {
+            setButtonState(true)
+        }
+    }
+
+    function handleSuccess() {
+        setUser({
+            login: '',
+            password: '',
+        })
+        setButtonState(false)
     }
 
     return (  
@@ -43,7 +56,7 @@ function Task1({usersData}) {
                         </label>
                     </div>
                     <button className="button mb1" type="button" onClick ={clickButton}>Go</button>
-                    {buttonState && <PromptLogin user={user} usersData={usersData} />}
+                    {buttonState && <PromptLogin user={user} usersData={usersData} onSuccess= {handleSuccess}/>}
                 </form>
             </div>
         </div>

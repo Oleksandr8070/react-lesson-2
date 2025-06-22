@@ -1,9 +1,9 @@
-import Task1 from './assets/components/task1/Task1'
-import Task2 from './assets/components/task2/Task2'
-import Task3 from './assets/components/task3/Task3'
-import Task4 from './assets/components/task4/Task4'
-import Task5 from './assets/components/task5/Task5'
-import Task6 from './assets/components/task6/Task6'
+import Task1 from './components/task1/Task1'
+import Task2 from './components/task2/Task2'
+import Task3 from './components/task3/Task3'
+import Task4 from './components/task4/Task4'
+import Task5 from './components/task5/Task5'
+import Task6 from './components/task6/Task6'
 
 function App() {
   const usersData = [

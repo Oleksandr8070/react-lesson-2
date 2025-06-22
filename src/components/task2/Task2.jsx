@@ -4,13 +4,16 @@ import Service1 from "./Service1";
 
 function Task2() {
     const [valueTicket, setValueTicket] = useState(0)
-    const classBackground =
-        valueTicket === 1
-        ? "background1Task2"
-        : valueTicket === 2
-        ? "background2Task2"
-        : "";
-
+    let classBackground
+    
+    if (valueTicket === 1) {
+        classBackground = "background1Task2"
+    } else if (valueTicket === 2) {
+        classBackground = "background2Task2"
+    } else {
+        classBackground = ""
+    }
+        
     function handleChange(e) {
         setValueTicket(parseInt(e.target.value))
     }
